@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+
+    阿伟你又在F12哦
+
+    Copyright _KZD 2020, all righ... 一共才几行，这么低技术力的东西你们来这看啥？
+    突发奇想写的，挺不戳的一个工具，丝滑无缝DD体验
+
+    陈叔叔的API真好用
+
+    "陈叔叔，我真的太喜欢宁了，mua，为了你，我要电牛纸！！！"
+
+
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="誰でも大好きの监控室">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="./main.js"></script>
+        <script type="text/javascript" src="./x-frame-bypass.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+        <script src="jquery.qrcode.min.js"></script>
+        <script src="pako.js"></script>
+        <title>誰でも大好きの监控室</title>
+    </head>
+    <body>
+    <div id="Background">
+    </div>
+    <div id="Main-container">
+        <div class="Sub-container">
+            <div class="Input-placeholder">
+                <h1 class="Wnd_Title">输入空降地址</h1>
+                <h5 class="Wnd_Title">BiliBili直播间房间号</h5>
+                <input class="Site-field" type="text" value="">
+                <button class="Submit-btn" onclick="set_addr(this);">确认</button>
+            </div>
+            <h5 class="Vid-title"></h5>
+            <div class="danmaku-placeholder">
+            </div>
+            <video width="100%" height="100%" class="content-holder">
+                
+            </video>
+        </div>
+    </div>
+    <div id="Login" style="display: none;">
+        <div style="margin: 0 auto; width: 80%;">
+            <h3 id="Login-Title">BiliBili用户</h3>
+            <h5>输入你的B站UID来自动同步关注列表直播间，有人开播时会自动打开新窗口！（仅限前5页最近关注）</h5>
+            <h5><b>注意！这不是登录操作！不要输你的用户名</b></h5>
+            <h5 id="Login-Subtitle">用户UID:</h5>
+            <input id="Login-usr" type="text">
+            <button id="Login-Submit" onclick="Get_Following();">确认</button>
+            <h5 style="color: green;" id="Status"></h5>
+            <div id="QR_placeholder"></div>
+        </div>
+    </div>
+    <button id="logwnd-btn" onclick="show_LoginID();">同步</button>
+    <button id="wnd-btn" onclick="add_wnd();">+</button>
+    </body>
+</html>
