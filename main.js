@@ -135,7 +135,7 @@ function Get_Following() {
         document.getElementById("Status").innerHTML = "稍候..."
         var req = new XMLHttpRequest();
         var UID = document.getElementById("Login-usr").value;
-        req.open("GET",CORS_Proxy + "http://api.bilibili.com/x/relation/followings?vmid=" + UID + "&pn=" + pg_n);
+        req.open("GET",CORS_Proxy + "https://api.bilibili.com/x/relation/followings?vmid=" + UID + "&pn=" + pg_n);
         req.onreadystatechange = function(){
             if(req.readyState == 4){
                 if(req.status == 200) {
@@ -365,7 +365,7 @@ async function Check_Login() {
     for (var i = 0; i < 600; i++) {
         await sleep(3000);
         var req = new XMLHttpRequest();
-        req.open("Post", CORS_Proxy + "http://passport.bilibili.com/qrcode/getLoginInfo");
+        req.open("Post", CORS_Proxy + "https://passport.bilibili.com/qrcode/getLoginInfo");
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         var Form = new FormData();
         Form.append("oauthKey", Glob_authkey);
@@ -388,7 +388,7 @@ var Glob_authkey = "";
 
 function QR_Login() {
     var req = new XMLHttpRequest();
-    req.open("GET",CORS_Proxy + "http://passport.bilibili.com/qrcode/getLoginUrl");
+    req.open("GET",CORS_Proxy + "https://passport.bilibili.com/qrcode/getLoginUrl");
     req.onreadystatechange = function(){
         if(req.readyState == 4){
             if(req.status == 200){
@@ -528,7 +528,7 @@ function set_addr(id){
             target_element = i;
             var field = document.getElementsByClassName("Site-field").item(i).value;
             var req = new XMLHttpRequest();
-            req.open("GET",CORS_Proxy + "http://api.live.bilibili.com/room/v1/Room/playUrl?cid="+ field +"&platform=h5&qn=10000");
+            req.open("GET",CORS_Proxy + "https://api.live.bilibili.com/room/v1/Room/playUrl?cid="+ field +"&platform=h5&qn=10000");
             last_roomid = field;
             req.onreadystatechange = function(){
                 if(req.readyState == 4){
@@ -610,7 +610,7 @@ function set_addr_id(id,rid,uname){
             target_element = id;
             var field = document.getElementsByClassName("Site-field").item(id).value;
             var req = new XMLHttpRequest();
-            req.open("GET",CORS_Proxy + "http://api.live.bilibili.com/room/v1/Room/playUrl?cid="+ rid +"&platform=h5&qn=10000&callback=handleresponse");
+            req.open("GET",CORS_Proxy + "https://api.live.bilibili.com/room/v1/Room/playUrl?cid="+ rid +"&platform=h5&qn=10000&callback=handleresponse");
             req.onreadystatechange = function(){
                 if(req.readyState == 4){
                     if(req.status == 200){
